@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+    <style>
+        .err {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>添加部门</h2>
+    <hr>
+    <p>
+        {% for err in errors %}
+        <div class="err">{{ err }}</div>
+        {% endfor %}
+    </p>
+    <form action="/add/" method="post">
+        <table>
+        {{ f.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>

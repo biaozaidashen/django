@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>部门员工信息</title>
+</head>
+<body>
+    <h1 style="text-align: center">{{ dept_name }}员工信息</h1>
+    <hr>
+    {% if emps_list %}
+        <table>
+            <tr>
+                <td>员工编号</td>Yang
+                <td>员工姓名</td>
+                <td>员工薪水</td>
+            </tr>
+            {% for e in emps_list %}
+            <tr>
+                <td>{{ e.no }}</td>
+                <td>{{ e.name }}</td>
+                <td>{{ e.sal }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>此部门暂时没有员工</h2>
+    {% endif %}
+</body>
+</html>
